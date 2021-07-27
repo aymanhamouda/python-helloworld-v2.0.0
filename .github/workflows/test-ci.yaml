@@ -24,7 +24,7 @@ jobs:
         id: docker_meta
         uses: crazy-max/ghaction-docker-meta@v1
         with:
-          images: aymanhamouda/python-helloworld # list of Docker images to use as base name for tags
+          images: aymanhamouda/python-helloworld-v.2.0.0 # list of Docker images to use as base name for tags
           tag-sha: true # add git short SHA as Docker tag
 
      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -51,7 +51,7 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: aymanhamouda/python-helloworld:latest
+          tags: aymanhamouda/python-helloworld-v.2.0.0:latest
       -
         name: Build and push
         id: docker_build
