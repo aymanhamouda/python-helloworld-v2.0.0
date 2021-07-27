@@ -48,4 +48,4 @@ jobs:
           file: ./Dockerfile
           platforms: linux/amd64
           push: true
-          tags: aymanhamouda/python-helloworld:latest
+          tags: aymanhamouda/python-helloworld-v.2.0.0:latest
