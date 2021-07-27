@@ -1,34 +1,39 @@
-
-from flask import Flask, app
-from flask import json
 import logging
-from werkzeug.datastructures import MIMEAccept
 
-from werkzeug.wrappers import response
+from flask import Flask
+from flask import json
+
 app = Flask(__name__)
+
 @app.route('/status')
-def healthcare():
-    response=app.response_class(
-        response=json.dump({"result":"ok-Healthy"}),
-        status=200,
-        mimetype='application/json'
+def healthcheck():
+    response = app.response_class(
+            response=json.dumps({"result":"OK - healthy"}),
+            status=200,
+            mimetype='application/json'
     )
-    app.logger.info('status requist successfull')
+
+    app.logger.info('Status request successfull')
     return response
 
 @app.route('/metrics')
 def metrics():
-    response=app.response_class(
-        {"status":"success", "code":0, "data":{"userCount":140, "userCountActive":23,}
-        },
-        status=200,
-        mimetype='application/json'   
+    response = app.response_class(
+            response=json.dumps({"status":"success", "code":0, "data":{"UserCount":140,"UserCountActive":23}}),
+            status=200,
+            mimetype='application/json'
     )
-    app.logger.info('Metrics requist succesfull')
+
+    app.logger.info('Metrics request successfull')
     return response
-@app.route('/')
-def hellow():
+
+@app.route("/")
+def hello():
+    app.logger.info('Main request successfull')
+
     return "Hello World!"
 
-if __name__== "_main_":
-    app.run(host='0.0.0.0')
+if __name__ == "__main__":
+    ## stream logs to a file
+    logging.basicConfig(filename='app.log',level=logging.DEBUG)
+    app.run(host='0.0.0.0', port=8080)
