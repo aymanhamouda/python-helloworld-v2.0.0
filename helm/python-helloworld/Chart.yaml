@@ -1,10 +1,10 @@
 apiVersion: v1
-name: python-helloworld 
+name: python-helloworld-v2.0.0 
 description: Install a Python HelloWorld deployment
 keywords:
 - python
 - helloworld 
 version: 1.0.0
 maintainers:
-- name: kgamanji 
-  email: kgamanji@xyz.com
+- name: Ayman Hamouda 
+  email: ayman.hamouda@live.com
