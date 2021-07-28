@@ -1,3 +1,2 @@
 # python-helloworld
- python-helloworld:latest.
-
+ python-helloworld-v2.0.0:latest .
