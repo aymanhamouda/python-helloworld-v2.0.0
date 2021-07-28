@@ -1,5 +1,5 @@
 applications:
-- name: python-helloworld 
+- name: python-helloworld-v2.0.0 
   memory: 64M
   disk_quota: 256M
   buildpacks: 
