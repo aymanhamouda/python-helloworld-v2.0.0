@@ -2,7 +2,7 @@ namespace:
   name: test
  
 image:
-  repository: aymanhamouda/python-helloworld 
+  repository: python-helloworld-v2.0.0
   tag: latest
 
 replicaCount: 3
